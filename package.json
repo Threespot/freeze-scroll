@@ -1,6 +1,6 @@
 {
   "name": "@threespot/freeze-scroll",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Prevent scrolling",
   "main": "index.js",
   "homepage": "https://threespot.github.io/freeze-scroll/",
