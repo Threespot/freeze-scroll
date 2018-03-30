@@ -1,4 +1,6 @@
-/* TODO: Figure out how to test after scrolling, since Jest doesn’t support window.scrollTo() */
+beforeEach(jest.resetModules);
+
+/* TODO: Test document.documentElement.style.scrollBehavior updates */
 
 import scroll from "../index";
 
@@ -9,7 +11,8 @@ function minify(string) {
 
 const body = `<div style="height: 1000px"></div>`;
 
-test('Freeze at top', () => {
+
+test('At top of page', () => {
   document.body.innerHTML = body;
 
   scroll.freeze();
@@ -25,14 +28,23 @@ test('Freeze at top', () => {
         width: 100% !important;
       }`
   ));
-});
-
-test('Unfreeze at top', () => {
-  document.body.innerHTML = body;
-
-  scroll.freeze();
 
   scroll.unfreeze();
 
   expect(document.documentElement.classList.contains('js-no-scroll')).toBe(false);
+});
+
+
+test('Scrolled down', () => {
+  global.window.pageYOffset = 100;
+
+  document.body.innerHTML = body;
+
+  scroll.freeze();
+
+  expect(document.body.style.top).toBe("-100px");
+
+  scroll.unfreeze();
+
+  expect(document.body.style.top).toBe("");
 });

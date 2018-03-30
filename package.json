@@ -50,7 +50,8 @@
     ],
     "moduleDirectories": [
       "node_modules"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "./test/mocks.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
