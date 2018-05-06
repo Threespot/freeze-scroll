@@ -1,6 +1,7 @@
 # Ignore local dev only files
 
 .coveralls.yml
+yarn-error.log
 *.cache
 *.dump
 *.dump.*

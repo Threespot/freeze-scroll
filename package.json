@@ -2,7 +2,7 @@
   "name": "@threespot/freeze-scroll",
   "version": "1.0.2",
   "description": "Prevent scrolling",
-  "main": "index.js",
+  "main": "dist/freeze-scroll.m.js",
   "homepage": "https://threespot.github.io/freeze-scroll/",
   "author": "Threespot <hello@threespot.com>",
   "contributors": [
