@@ -38,6 +38,20 @@ scroll.freeze();
 scroll.unfreeze();
 ```
 
+**NOTE:** Calling `freeze()` or `unfreeze()` will trigger a scroll event. If you have other scroll event listeners, you may want to ignore this event by checking for the `js-no-scroll` class on the `<html>` element.
+
+Example:
+```js
+window.addEventListener('scroll', () => {
+  // Ignore scroll events trigger by freeze-scroll
+  if (document.documentElement.classList.contains('js-no-scroll')) {
+    return false;
+  }
+
+  // continue with your scroll event handler code
+});
+```
+
 ## License
 
 This is free software and may be redistributed under the terms of the [MIT license](https://github.com/Threespot/freeze-scroll/blob/master/LICENSE.md).
