@@ -1,6 +1,6 @@
 {
   "name": "@threespot/freeze-scroll",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Prevent scrolling",
   "main": "dist/freeze-scroll.m.js",
   "module": "index.mjs",
@@ -37,7 +37,7 @@
   "scripts": {
     "webpack": "webpack --config webpack.config.js",
     "docs": "jsdoc index.js -t node_modules/minami --readme README.md --destination docs",
-    "test:prod": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:prod": "jest --coverage",
     "test": "jest --coverage --no-cache",
     "npm-patch": "npm version patch --force -m \"version %s\"",
     "npm-minor": "npm version minor --force -m \"version %s\"",
@@ -68,7 +68,6 @@
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-add-module-exports": "^1.0.2",
-    "coveralls": "^3.1.0",
     "eslint-loader": "^4.0.2",
     "eslint": "^7.8.1",
     "jest": "^26.4.2",
