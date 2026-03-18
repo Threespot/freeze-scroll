@@ -1,5 +1,5 @@
 const path = require("path");
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
@@ -44,11 +44,11 @@ const defaultConfig = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["babel-preset-env"]
+            presets: ["@babel/preset-env"]
           }
         }
       }
